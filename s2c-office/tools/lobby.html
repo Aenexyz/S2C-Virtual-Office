@@ -1,0 +1,46 @@
+        <div class="lobby" id="lobbyStart">
+          <h2>S2C Virtual Office</h2>
+          <p>Enter the lobby code from your Managing Partner to join the office.</p>
+          <form class="field" id="joinForm" autocomplete="off">
+            <label for="codeInput">Lobby code</label>
+            <input type="text" id="codeInput" class="code-input" maxlength="6" placeholder="ABC123" required>
+          </form>
+          <button class="enter" type="submit" form="joinForm" id="findBtn">Find lobby</button>
+          <div class="lobby-err" id="startErr" hidden></div>
+          <div class="divider">Managing Partner</div>
+          <button class="ghost" type="button" id="hostStartBtn">Host a new lobby</button>
+        </div>
+
+        <form class="lobby" id="lobbyHost" autocomplete="off" hidden>
+          <h2>Host a lobby</h2>
+          <p>You join as the Managing Partner. Add the names of the people holding each role. Anyone else joins as an Agent.</p>
+          <div class="roster-grid">
+            <label for="host-mp">Managing Partner</label><input type="text" id="host-mp" maxlength="20" placeholder="Your name" required>
+            <label for="host-ceo">CEO</label><input type="text" id="host-ceo" maxlength="20" placeholder="Name (optional)">
+            <label for="host-cfo">CFO</label><input type="text" id="host-cfo" maxlength="20" placeholder="Name (optional)">
+            <label for="host-coo">COO</label><input type="text" id="host-coo" maxlength="20" placeholder="Name (optional)">
+            <label for="host-qm">Quality Manager</label><input type="text" id="host-qm" maxlength="20" placeholder="Name (optional)">
+            <label for="host-gm">General Manager</label><input type="text" id="host-gm" maxlength="20" placeholder="Name (optional)">
+          </div>
+          <div class="lobby-err" id="hostErr" hidden></div>
+          <div class="row"><button class="ghost" type="button" id="hostBackBtn">Back</button><button class="enter" type="submit" id="hostCreateBtn">Create lobby</button></div>
+        </form>
+
+        <div class="lobby" id="lobbyCreated" hidden>
+          <h2>Your lobby is ready</h2>
+          <p>Share this code or link with your team. They pick their name from your roster, or join as an Agent.</p>
+          <div class="code-box"><b id="createdCode">------</b><button type="button" id="copyLinkBtn">Copy link</button></div>
+          <button class="enter" type="button" id="hostEnterBtn">Continue as Managing Partner</button>
+        </div>
+
+        <form class="lobby" id="lobbyPick" autocomplete="off" hidden>
+          <h2>Who are you?</h2>
+          <p id="pickIntro">Pick your name from the roster, or join as an Agent.</p>
+          <div class="pick-list" id="pickList" role="radiogroup" aria-label="Your name"></div>
+          <div class="field agent-name" id="agentNameField" hidden>
+            <label for="agentName">Your name</label>
+            <input type="text" id="agentName" maxlength="20" placeholder="e.g. Sam Lee">
+          </div>
+          <div class="lobby-err" id="pickErr" hidden></div>
+          <div class="row"><button class="ghost" type="button" id="pickBackBtn">Back</button><button class="enter" type="submit" id="pickGoBtn">Continue</button></div>
+        </form>
